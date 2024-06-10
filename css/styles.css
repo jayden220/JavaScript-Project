@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+body{
+    min-height: 100vh;
+    background-image: url();
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+
+nav{
+    background-color: rgba(193, 237, 148, 0.238);
+    box-shadow: 4px 3px 4px;
+   
+}
+
+nav ul{
+    width: 100%;
+    display: flex; 
+     justify-content: flex-end;
+    align-items: flex-end; 
+}
+
+
+nav li{
+    height: 50px;
+    list-style: none;
+    padding-top: 30px;
+}
+
+nav a{
+    padding: 0 30px;
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    color: black;
+}
+
+nav li:hover{
+    background-color: rgba(108, 108, 213, 0.503);
+
+}
+
+
+.logo{
+    margin-right: auto;
+    font-size: 30px;
+    padding-left: 10px;
+
+}
+
+.phoneNav{
+    position: fixed;
+    backdrop-filter: blur(20px);
+    background-color: aqua;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+
+
+}
+
+.phoneNav li{
+    width: 100%;
+}
+
+.phoneNav a{
+    width: 100%;
+}
+
+.showNav{
+    margin-right: -50px;
+    display: none;
+}
+
+.shopIcon, .contactIcon{
+    display: none;
+}
+
+
+.heading{
+    background-color:#BFA100;
+    text-align: center;
+    margin: 0 200px;
+    margin-top: 80px;
+    font-size: 4cqi;
+}
+
+
+
+.background1{
+    
+    width: 100%;
+    height: 100%; 
+}
+
+.background2{
+    display: none;
+}
+
+.background3{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+footer{
+    height: 120px;
+    background-color: blue;
+    margin: 7px 0;
+    
+}
+
+footer p{
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+footer div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+
+
+@media (max-width: 769px) {
+
+    .desktopNav{
+        display: none;
+    }
+
+    .showNav{
+        display: block;
+        margin-right: 30px;
+        color: black;
+    }
+
+    .shopIcon{
+        display: block;
+        color: black;
+    }
+
+    .shopIcon, .contactIcon{
+        display: block;
+        color: red;
+    }
+}
+
+@media (max-width:476px){
+    .shopIcon{
+        display: none;
+    }
+
+    .shopIcon, .contactIcon , .searchIcon{
+        display: none;
+    }
+
+    .phoneNav{
+        width: 100%;
+    }
+
+    ul{
+        width: 100%;
+    }
+
+    .showNav{
+        margin-right: -10px;
+        color: black;
+        
+    }
+
+    .heading{
+        background-color: blue;
+        text-align: center;
+        margin: 10px 20px;
+    }
+
+    .homeCover{
+        padding-top: 60px;
+    }
+    .background1{
+        display: none;
+    }
+
+    .background2{
+        display: block;
+        height: 100%;
+        width: 140%;
+    }
+
+    footer{
+        margin: 3px 0;
+        height: 70px;
+    }
+    
+
+}
