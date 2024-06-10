@@ -133,6 +133,32 @@ footer div{
     justify-content: flex-end;
 }
 
+/* About page */
+.mission{
+    margin:120px 50px;
+    color: #070600de;
+    text-align: center;
+   
+}
+
+.whoWeare{
+    margin:120px 50px;
+    color: #070600de;
+    text-align: center;
+}
+
+.offer{
+    margin:120px 50px;
+    color: #070600de;
+    text-align: center;
+}
+
+.choose{
+    margin:120px 50px;
+    color: #070600de;
+    text-align: center;
+}
+
 
 
 
