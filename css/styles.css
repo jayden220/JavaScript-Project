@@ -159,6 +159,74 @@ footer div{
     text-align: center;
 }
 
+/* Product Page */
+.product-background{
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.searchBox{
+    
+    height: 10cqi;
+    width: 40cqi;
+    margin: 10cqi auto;
+   
+    background-color: aliceblue;
+}
+
+.searchBox-items{
+    margin: 0 auto;
+    height: 5em;
+    overflow: hidden;
+}
+
+.product-container{
+    /* margin: 10cqi auto; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+  .product{
+    border: 3px solid;
+    width: 50cqi;
+    height: 40cqi;
+    margin: 1cqi 1cqi;
+    color: rgb(13, 0, 0);
+    background-color: rgb(255, 255, 255);
+}  
+
+.product-grid-1{
+    width: 48cqi;
+}
+
+.searchBox .searchBar{
+    align-items: center;
+}
+
+.searchBar h4{
+    text-align: center;
+}
+
+.product-image{
+    width: 47cqi;
+
+}
+
+.product-name{
+    font-size: 2em;
+    margin-bottom: .5em;
+}
+.product-cat{
+    font-size: .9em;
+    margin-bottom: 2em;
+}
+
+.product-price{
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+
+
 
 
 
@@ -182,6 +250,33 @@ footer div{
     .shopIcon, .contactIcon{
         display: block;
         color: red;
+    }
+
+    .product-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+      .product-grid-1{
+        
+        margin: 10cqi auto;
+        width: 90cqi;
+        height: 70cqi;
+        overflow: hidden;
+    }  
+
+     .product{
+        width: 100cqi;
+        height: 70cqi;
+        margin: .5em 0;
+        overflow: hidden;
+    } 
+
+    .product-image{
+        width: 90cqi;
+        margin: 0em 0;
+        
     }
 }
 
@@ -232,5 +327,36 @@ footer div{
         height: 70px;
     }
     
+    /* Product Page */
+    .product-container .product-grid-1{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .product-container .product-grid-2{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .product-grid-1{
+        
+        margin: 9cqi auto;
+        width: 90cqi;
+        overflow: hidden;
+        height: 100cqi;
+    }  
+
+     .product{
+        width: 100cqi;
+        height: 120cqi;
+        overflow: hidden;
+    } 
+
+
+    .product-image{
+        width: 90cqi;
+        overflow: hidden;
+        margin: 0;
+    }
 
 }
