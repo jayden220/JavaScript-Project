@@ -45,37 +45,101 @@ products.forEach(product =>{
 
 
 
-let input = document.querySelector('.searchInput');
+
+//Search Function
+let input = document.querySelector('.searchBar');
 let search = document.querySelector('.searchButton');
 
  
 function searchItems() {
-    let searchText = input.value.toUpperCase().trim();
+    let searchText = input.value.trim().toUpperCase();
     let filteredProducts = products.filter(product => {
         return Object.values(product).some(value => {
-            if (typeof value === '') {
+            if (typeof value === 'string') {
                 return value.toUpperCase().includes(searchText);
             }
             return false;
+            
+            
         });
+        
+
+        
     });
 
+    shop.innerHTML =""
 
-    console.log(filteredProducts);
+    filteredProducts.forEach(product =>{
+        shop.innerHTML += `
+    
+    
+    
+        <div class="product-container">
+                    <div class="product-grid-1">
+                        <div class="product">
+                            <img class="product-image" src="${product.photo}" alt="">
+                            <h5 class="product-name">${product.brand}</h5>
+                            <p class="product-cat">${product.category}</p>
+                            <p class="product-price">R${product.price}</p>
+                            <button class ="product-buy">buy</button><button class="product-info">more</button>
+                        </div>
+                        </div>
+        </div>
+        `
+    })
+
+
+    return {filteredProducts}
 }
 
 search.addEventListener('click', searchItems);
 
+//Sort button
+let sort = document.querySelector('.sortButton')
+function sorting() {
+    products.sort(( a, b) =>{
 
-// let input = document.querySelector('.searchInput')
-// let search = document.querySelector('.searchButton')
+        let sort1 = a.brand.toUpperCase()
+        let sort2 = b.brand.toUpperCase()
 
-// function searchItems(){
-//     let searchText = input.value.toUpperCase().trim()
-//     let filterProducts = products.filter(found =>{
-//         return Object.values(found).some(value => typeof value)
-//     })
-// }
+        if(sort1 > sort2){
+            return 1
+        }
+        
+        if(sort1 < sort2){
+            return -1
 
-// input.addEventListener('', searchItems)
-// search.addEventListener('click', searchItems)
+        }
+        })
+        
+
+        
+            return 0
+            
+            } 
+    
+            
+
+sort.addEventListener('click',sorting)
+
+
+
+//Filter function
+
+// git
+// let categoryCheckbox = document.querySelector('sportFil')
+// function filter() {
+    
+//     alert('l')
+//     if(products.category == 'sport'){
+//         return products;
+
+
+//     }
+//     else{
+//         return
+//     }
+//     }
+    
+//     categoryCheckbox.addEventListener('change',filter)
+//     categoryCheckboxes.addEventListener('change',filter)
