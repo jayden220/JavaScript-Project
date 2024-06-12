@@ -6,7 +6,7 @@ menu.addEventListener('click', showBar)
 function showBar() {
     const phoneNav = document.querySelector('.phoneNav')
     phoneNav.style.display = 'flex'
-    alert('hi')
+    
 }
 
 

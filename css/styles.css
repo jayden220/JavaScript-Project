@@ -10,6 +10,10 @@ body{
     background-color: whitesmoke;
 }
 
+.container-main{
+    min-height: 100vh;
+}
+
 
 nav{
     background-color: rgba(193, 237, 148, 0.238);
@@ -83,7 +87,7 @@ nav li:hover{
     display: none;
 }
 
-.shopIcon, .contactIcon{
+.contactIcon{
     display: none;
 }
 
@@ -220,17 +224,25 @@ footer div{
 }
 .searchBox{
     
-    height: 10cqi;
-    width: 40cqi;
-    margin: 10cqi auto;
-   
-    background-color: aliceblue;
+    height: 20cqi;
+    width: 20cqi;
+    margin: 5cqi auto;
+    padding-left: 10cqi;
+    background-color: rgb(30, 109, 179);
 }
 
 .searchBox-items{
-    margin: 0 auto;
+    padding-right: 7cqi;
     height: 10em;
     overflow: hidden;
+}
+
+.searchBar{
+    margin-right: 5%;
+    padding: .5cqi;
+}
+.searchButton{
+    margin-top: 1cqi;
 }
 
 .product-container{
@@ -241,24 +253,27 @@ footer div{
 
   .product{
     border: 3px solid;
-    width: 50cqi;
-    height: 40cqi;
+    width: 48cqi;
+    height: 45cqi;
     margin: 1cqi 1cqi;
     color: rgb(13, 0, 0);
-    background-color: rgb(255, 255, 255);
+    background-color: #DCE0E1;
+    box-shadow: 0px 0px 3px #757676;
+    border-radius: 1%;
+    border: rebeccapurple 4px;
 }  
 
 .product-grid-1{
     width: 48cqi;
 }
 
-.searchBox .searchBar{
+/* .searchBox .searchBar{
     align-items: center;
 }
 
 .searchBar h4{
     text-align: center;
-}
+} */
 
 .product-image{
     width: 47cqi;
@@ -279,13 +294,22 @@ footer div{
     margin-bottom: 2em;
 }
 
+ 
+/* checkout table */
+table{
+    border-bottom: #757676 3px solid;
+    margin: 0 auto;
+}
 
+th{
+    margin: 4cqi;
+}
 
+.contents{
+    padding: 0 clamp(2cqi, 2vw , 10cqi);
+}
 
-
-
-
-@media (max-width: 769px) {
+@media (max-width: 969px) {
 
     .desktopNav{
         display: none;
@@ -341,14 +365,13 @@ footer div{
 
     }
 }
+}
 
 @media (max-width:476px){
     /* Home page */
-    .shopIcon{
-        display: none;
-    }
+    
 
-    .shopIcon, .contactIcon , .searchIcon{
+    .contactIcon{
         display: none;
     }
 
@@ -425,7 +448,7 @@ footer div{
         width: 80cqi;
         overflow: hidden;
         margin: 0;
-=======
+    }
     /* About Page */
     .about{
         text-align: center;
@@ -465,6 +488,23 @@ footer div{
         margin-bottom: 2em;
         filter: grayscale(60%);
 
+    }
+
+    /* cart */
+    .cart{
+        color: #BFA100;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60cqi;
+        height: 100vh;
+        background-color: black;
+        display: grid;
+        grid-template-rows: 50px 1fr 50px;
+        gap: 20px;
+        transition: right 1s;
+        display: none;
+    
     }
 
 }

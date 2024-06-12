@@ -36,13 +36,41 @@ products.forEach(product =>{
                         <h5 class="product-name">${product.brand}</h5>
                         <p class="product-cat">${product.category}</p>
                         <p class="product-price">R${product.price}</p>
-                        <button class ="product-buy">buy</button><button class="product-info">more</button>
+                        <button class ="product-buy" value="${product.id}">buy</button><button class="product-info">more</button>
                     </div>
                     </div>
     </div>
     `
 })
 
+//Add to Cart Button Functionality
+
+let addButtons = document.querySelectorAll('.product-buy')
+function addToCart(id){
+    let [item] = products.filter(object=> object.id== id)
+    console.log(item);
+    bought.push(item)
+    console.log(bought)
+    localStorage.setItem("bought",JSON.stringify(bought)) 
+}
+
+addButtons.forEach(btn =>{
+    btn.addEventListener('click',(event)=>{
+        addToCart(event.target.value);
+    })
+})
+
+
+
+
+
+//More Info
+let infoButtons = document.querySelectorAll('.product-info')
+infoButtons.forEach(btn =>{
+    btn.addEventListener('click',()=>{
+        alert('i')
+    })
+})
 
 
 
@@ -92,7 +120,7 @@ function searchItems() {
     return {filteredProducts}
 }
 
-search.addEventListener('click', searchItems);
+input.addEventListener('input', searchItems);
 
 //Sort button
 let sort = document.querySelector('.sortButton')
@@ -124,22 +152,3 @@ sort.addEventListener('click',sorting)
 
 
 
-//Filter function
-
-// git
-// let categoryCheckbox = document.querySelector('sportFil')
-// function filter() {
-    
-//     alert('l')
-//     if(products.category == 'sport'){
-//         return products;
-
-
-//     }
-//     else{
-//         return
-//     }
-//     }
-    
-//     categoryCheckbox.addEventListener('change',filter)
-//     categoryCheckboxes.addEventListener('change',filter)
