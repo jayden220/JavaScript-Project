@@ -309,6 +309,39 @@ th{
     margin-top: 5cqi;
 }
 
+
+/* Admin Page */
+.admin-container{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    width: fit-content;
+    margin: 5cqi auto;
+}
+.admin-title h3{
+    text-align: center;
+    margin-bottom: 5cqi;
+}
+
+.admin-input{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.admin-input input{
+    width: 20cqi;
+    margin: 1cqi;
+    align-items: center;
+    padding-left: 15cqi;
+}
+.admin-table table{
+    width: 100%;
+}
+.admin-table table thead th{
+    padding: 0 10px;
+}
+
 @media (max-width: 969px) {
 
     .desktopNav{
