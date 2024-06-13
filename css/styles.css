@@ -267,13 +267,7 @@ footer div{
     width: 48cqi;
 }
 
-/* .searchBox .searchBar{
-    align-items: center;
-}
 
-.searchBar h4{
-    text-align: center;
-} */
 
 .product-image{
     width: 47cqi;
@@ -307,6 +301,12 @@ th{
 
 .contents{
     padding: 0 clamp(2cqi, 2vw , 10cqi);
+}
+
+
+.total_rand{
+    margin-left: 22cqi;
+    margin-top: 5cqi;
 }
 
 @media (max-width: 969px) {

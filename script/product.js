@@ -1,4 +1,26 @@
+let menu = document.querySelector('.showNav')
+let close = document.querySelector('.hideNav')
+
+//show side bar on click
+menu.addEventListener('click', showBar)
+function showBar() {
+    const phoneNav = document.querySelector('.phoneNav')
+    phoneNav.style.display = 'flex'
+    
+}
+
+
+//close side bar on click 
+close.addEventListener('click', hideBar)
+function hideBar() {
+    const phoneNav = document.querySelector('.phoneNav')
+    phoneNav.style.display = 'none'
+}
+
+
+
 let shop = document.querySelector('.product-container')
+
 
 
 function makeProduct(id,brand,category,photo,description,quantity,price) {
@@ -20,15 +42,14 @@ let product6 = new makeProduct(6,'Supra','sports','/HostedImages/product6.jpg','
 
 let products = [product1,product2,product3,product4,product5,product6]
 localStorage.setItem('products',JSON.stringify(products))
+let checkoutItems = JSON.parse(localStorage.getItem('purchased'))
+console.log(checkoutItems);
 
 
-let bought =[]
+let bought = checkoutItems || []
 
 products.forEach(product =>{
-    shop.innerHTML += `
-
-
-
+    shop.innerHTML += ` 
     <div class="product-container">
                 <div class="product-grid-1">
                     <div class="product">
@@ -48,11 +69,23 @@ products.forEach(product =>{
 let addButtons = document.querySelectorAll('.product-buy')
 function addToCart(id){
     let [item] = products.filter(object=> object.id== id)
-    console.log(item);
-    bought.push(item)
-    console.log(bought)
-    localStorage.setItem("bought",JSON.stringify(bought)) 
+    
+     
+    if(bought.some((item)=> item.id === id)){
+        alert('product already in cart');
+    }else{
+        bought.push({
+           ...item,
+           quantity : 1
+        })
+        
+        }
+        
+        console.log(bought)
+        localStorage.setItem('bought', JSON.stringify(bought))
+
 }
+
 
 addButtons.forEach(btn =>{
     btn.addEventListener('click',(event)=>{

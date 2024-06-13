@@ -1,8 +1,8 @@
-let menu = document.querySelector('.showNav')
+let nav = document.querySelector('.showNav')
 let close = document.querySelector('.hideNav')
 
 //show side bar on click
-menu.addEventListener('click', showBar)
+nav.addEventListener('click', showBar)
 function showBar() {
     const phoneNav = document.querySelector('.phoneNav')
     phoneNav.style.display = 'flex'
