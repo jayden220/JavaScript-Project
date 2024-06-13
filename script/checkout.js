@@ -64,21 +64,42 @@ let total = document.querySelector('.total_rand')
 
 
 //del function
-let deletebtn = document.querySelectorAll('.removeBtn')
-function delproduct(a){
-    purchased.splice(a, 1)
-}
+// let deletebtn = document.querySelectorAll('.removeBtn')
+// function delproduct(a){
+//     purchased.splice(a, 1)
+// }
+
+// Event listener for remove button clicks
+table.addEventListener('click', function(event) {
+    if (event.target.classList.contains('removeBtn')) {
+        // Traverse up the DOM to find the <tr> element containing the remove button
+        let rowIndex = 0;
+        let target = event.target;
+        while (target && target.tagName !== 'TR') {
+            target = target.parentNode;
+        }
+        if (target) {
+            // Get the index of the <tr> element in the table rows collection
+            rowIndex = Array.from(table.querySelectorAll('tr')).indexOf(target);
+            if (rowIndex !== -1) {
+                removeFromCart(rowIndex);
+            }
+        }
+    }
+});
+
+
 
 //empty cart function
 let clear = document.querySelector('.clear-cart')
 
+clear.addEventListener('click' , emptyCart)
 
 function emptyCart(){
-    bought = [] || JSON.parse(localStorage.getItem('bought'))
-    localStorage.setItem('bought', JSON.stringify(bought))
-    }
+    purchased = []
+    localStorage.setItem('purchased', JSON.stringify(purchased))
 
-clear.addEventListener('click' , emptyCart)
+}
 
 
 
