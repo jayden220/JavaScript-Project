@@ -16,3 +16,14 @@ function hideBar() {
     const phoneNav = document.querySelector('.phoneNav')
     phoneNav.style.display = 'none'
 }
+
+
+let save = document.querySelector("#save-changes")
+
+save.addEventListener('click', addProduct)
+
+function addProduct(){
+    alert('hi')
+    products.push()
+}
+

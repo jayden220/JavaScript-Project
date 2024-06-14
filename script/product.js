@@ -68,22 +68,18 @@ products.forEach(product =>{
 
 let addButtons = document.querySelectorAll('.product-buy')
 function addToCart(id){
-    let [item] = products.filter(object=> object.id== id)
-    
-     
-    if(bought.some((item)=> item.id === id)){
-        alert('product already in cart');
-    }else{
+    let index = bought.findIndex(object=> object.id== id)
+    if(index == -1){
+        console.log('IF MET');
         bought.push({
-           ...item,
+           ...products.find(item => item.id == id),
            quantity : 1
         })
-        
-        }
-        
+    } else{
+        bought[index].quantity ++
+    }
         console.log(bought)
-        localStorage.setItem('bought', JSON.stringify(bought))
-
+        localStorage.setItem('purchased', JSON.stringify(bought))
 }
 
 

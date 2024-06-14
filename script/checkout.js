@@ -1,5 +1,5 @@
 let getitems = JSON.parse(localStorage.getItem('products'))
-let purchased = JSON.parse(localStorage.getItem('bought')) || []
+let purchased = JSON.parse(localStorage.getItem('purchased')) || []
 let menu = document.querySelector('.showNav')
 let close = document.querySelector('.hideNav')
 let table = document.querySelector('.showBought')
@@ -22,6 +22,7 @@ function hideBar() {
 
 //show products in checkout
 function showProduct(){
+    table.innerHTML =''
     purchased.forEach(product => {
         table.innerHTML += `
          
@@ -30,8 +31,8 @@ function showProduct(){
                   <td class="contents">${product.id}</td>
                   <td class="contents">${product.category}</td>
                   <td class="contents">${product.price}</td>
-                  <td class="contents quantity"><button class="down" data-id="${product.id}"><</button><span class = "pQuan">1</span><button class="up" data-id="${product.id}">></button></td>
-                  <td class="contents"><button class= "removeBtn">remove</button></td>
+                  <td class="contents quantity"><button class="down" id="${product.id}"><</button><span class = "pQuan">${product.quantity}</span><button class="up" data-id="${product.id}">></button></td>
+                  <td class="contents"><button class= "removeBtn" value=${product.id}>remove</button></td>
 
                 </tr>
                 
@@ -58,35 +59,34 @@ let total = document.querySelector('.total_rand')
 
 
 
+
+
+
+
     
 
 
 
 
-//del function
-// let deletebtn = document.querySelectorAll('.removeBtn')
-// function delproduct(a){
-//     purchased.splice(a, 1)
-// }
+// del function
+let deletebtn = document.querySelectorAll('.removeBtn')
+
+deletebtn.forEach(item => {
+    item.addEventListener('click', (event)=>{
+        delproduct(event.target.value)
+    })
+})
+function delproduct(a){
+    
+    let index = purchased.findIndex(item => item.id == a)
+    console.log(index)
+    purchased.splice(index, 1)
+    localStorage.setItem('purchased', JSON.stringify(purchased))
+    showProduct()
+}
 
 // Event listener for remove button clicks
-table.addEventListener('click', function(event) {
-    if (event.target.classList.contains('removeBtn')) {
-        // Traverse up the DOM to find the <tr> element containing the remove button
-        let rowIndex = 0;
-        let target = event.target;
-        while (target && target.tagName !== 'TR') {
-            target = target.parentNode;
-        }
-        if (target) {
-            // Get the index of the <tr> element in the table rows collection
-            rowIndex = Array.from(table.querySelectorAll('tr')).indexOf(target);
-            if (rowIndex !== -1) {
-                removeFromCart(rowIndex);
-            }
-        }
-    }
-});
+
 
 
 
@@ -97,7 +97,9 @@ clear.addEventListener('click' , emptyCart)
 
 function emptyCart(){
     purchased = []
-    localStorage.setItem('purchased', JSON.stringify(purchased))
+    localStorage.removeItem('purchased')
+    table.innerHTML = ''
+    alert('ji')
 
 }
 
