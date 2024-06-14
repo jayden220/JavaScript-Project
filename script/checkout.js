@@ -20,8 +20,11 @@ function hideBar() {
     phoneNav.style.display = 'none'
 }
 
+
+
 //show products in checkout
 function showProduct(){
+    let totalprice = ''
     table.innerHTML =''
     purchased.forEach(product => {
         table.innerHTML += `
@@ -38,7 +41,9 @@ function showProduct(){
                 
 
         `
-
+    let totalprice = product.price * product.quantity
+    let total = document.querySelector(".total_rand")
+    total.innerHTML = totalprice
         })
 
         localStorage.setItem('purchased',JSON.stringify(purchased))
@@ -47,8 +52,7 @@ function showProduct(){
         console.log(purchased);
     
         
-let price1 = document.querySelectorAll('car-price')
-let total = document.querySelector('.total_rand')
+
 
 //INCREASE AND DECREASE QUANTITY
 
@@ -103,6 +107,8 @@ function emptyCart(){
 
 }
 
+
+//Calculate total
 
 
 

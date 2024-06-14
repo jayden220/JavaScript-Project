@@ -1,64 +1,96 @@
 *{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+     
 }
 body{
-    min-height: 100vh;
+     min-height: 100vh; 
     background-image: url();
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: whitesmoke;
+    overflow-x: hidden;
 }
 
 .container-main{
-    min-height: 100vh;
+     min-height: 100vh;
 }
 
 
 nav{
-    background-color: rgba(193, 237, 148, 0.238);
+    background-color: rgba(0, 0, 0, 0.238);
     box-shadow: 4px 3px 4px;
-   
+    position: relative;
+    color: white;
+    
 }
 
 nav ul{
     width: 100%;
     display: flex; 
-     justify-content: flex-end;
+    justify-content: flex-end;
     align-items: flex-end; 
+    height: max-content;
+    padding-bottom: 2em;
+    margin: 0 5cqi ;
+}
+
+nav .logo{
+    display: flex;
+    justify-content: flex-start;
 }
 
 
 nav li{
     height: 50px;
     list-style: none;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 nav a{
     padding: 0 30px;
     display: flex;
+    font-size: 1rem;
+    font-weight: 500;
     align-items: center; 
     text-decoration: none;
     color: black;
     transition: 0.3s ease;
+    text-transform: uppercase;
 }
 
-nav li a:hover, 
-nav li a.active{
+nav li a:hover, nav li a .active{
     /* background-color: rgba(108, 108, 213, 0.503); */
     color: #BFA100;
+    transition: .2s ease-in;
+    border-bottom: 3px solid #ffdd97;
 
 }
 
-nav 
+nav li a.active::after,
+nav li a:hover {
+content: "";
+width: 10%;
+text-decoration: underline; 
+     
+}
+
+.homeCover{
+    background-image: url(/HostedImages/carpixel.net-2024-mansory-linea-doro-122227-hd.jpg);
+    background-size: contain;
+}
 
 
 .logo{
     margin-right: auto;
     font-size: 30px;
-    padding-left: 10px;
+    padding-left: 4px;
+    text-align: start;
 
+}
+
+.logo img{
+    margin: .5em 0;
+    height: 1em;
 }
 
 .phoneNav{
@@ -85,6 +117,13 @@ nav
 
 .phoneNav a{
     width: 100%;
+    text-transform: uppercase;
+    height: 50px;
+}
+.phoneNav a:hover{
+    background-color: #757676;
+    color: #BFA100;
+    
 }
 
 .showNav{
@@ -96,9 +135,21 @@ nav
     display: none;
 }
 
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url(/HostedImages/yuvraj-singh-tmAynVA_ihE-unsplash.jpg);
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
 
 .heading{
-    background-color:#BFA100;
+    background-color:#bfa20065;
     text-align: center;
     margin: 0 200px;
     margin-top: 80px;
@@ -132,25 +183,35 @@ nav
 
 }
 
+.footer-edit{
+    display: grid;
+}
+
 
 
 footer{
     height: 250px;
-    background-color: blue;
+    background-color: rgba(0, 0, 0, 0.818);
     margin: 0px 0;
     overflow-x: hidden;
+    color: white;
 }
 
-footer p{
+.copyrights{
+    padding: 20px;
+    text-align: center;
+}
+
+/* footer p{
     margin-top: 20px;
     padding-left: 10px;
-}
+} */
 
-footer div{
+/* footer div{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
+} */
 
 .icon-container{
     display: flex;
@@ -167,6 +228,13 @@ footer div{
 .about{
     margin: 1em 0;
     text-align: center;
+    color: aliceblue;
+    text-transform: uppercase;
+    text-shadow: 12px 4px 20px black;
+    /* -4px 4px 0px black, */
+    /* -6px 6px 0px black; */
+    /* -8px 8px 0px red,
+    -9px 9px 0px red; */
 }
 .mission{
     margin: 10em auto;
@@ -243,24 +311,58 @@ footer div{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.banner1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url(/HostedImages/carpixel.net-2024-mansory-linea-doro-122229-hd.jpg);
+    width: 100cqi;
+    height: 55vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner1 h6{
+    font-size: 5em;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 10px;
+    padding-top: 120px;
+}
+
+.product-heading{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2cqi 0 ;
+}
 .searchBox{
-    
-    height: 20cqi;
+    margin: 5cqi 5cqi;
     width: 20cqi;
-    margin: 5cqi auto;
-    padding-left: 10cqi;
-    background-color: rgb(30, 109, 179);
+    
 }
 
 .searchBox-items{
     padding-right: 7cqi;
     height: 10em;
     overflow: hidden;
+    width: 100%;
+    align-items: center;
+}
+
+.searchBox-items h5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .searchBar{
     margin-right: 5%;
     padding: .5cqi;
+    width: max-content;
 }
 .searchButton{
     margin-top: 1cqi;
@@ -272,7 +374,11 @@ footer div{
     grid-template-columns: 1fr 1fr;
 }
 
-  .product{
+.info-image{
+    width: 100%;
+}
+
+.product{
     border: 3px solid;
     width: 48cqi;
     height: 45cqi;
@@ -282,15 +388,15 @@ footer div{
     box-shadow: 0px 0px 3px #757676;
     border-radius: 1%;
     border: rebeccapurple 4px;
-}  
-
-.product-grid-1{
-    width: 48cqi;
-}
-
-
-
-.product-image{
+    }  
+    
+    .product-grid-1{
+        width: 48cqi;
+        }
+        
+        
+        
+        .product-image{
     width: 47cqi;
 
 }
@@ -302,49 +408,58 @@ footer div{
 .product-cat{
     font-size: .9em;
     margin-bottom: 2em;
-}
-
-.product-price{
-    font-weight: 300;
-    margin-bottom: 2em;
-}
-
- 
+    }
+    
+    .product-price{
+        font-weight: 300;
+        margin-bottom: 2em;
+        }
+.product-buy{
+    background-color: orangered;
+    width: 60px;
+    height: 35px;
+    border-radius: 20%;
+    text-transform: uppercase;
+    
+    padding: 2px;
+}   
+        
 /* checkout table */
 table{
     border-bottom: #757676 3px solid;
     margin: 0 auto;
-}
-
-th{
-    margin: 4cqi;
-}
-
-.contents{
+    }
+    
+    th{
+        margin: 4cqi;
+        }
+        
+        .contents{
     padding: 0 clamp(2cqi, 2vw , 10cqi);
-}
+    }
 
 
-.total_rand{
+    .total_rand .total-name{
     margin-left: 22cqi;
     margin-top: 5cqi;
-}
+    }
 
-
-/* Admin Page */
+    
+    
+    /* Admin Page */
 .admin-container{
     display: flex;
     flex-direction: column;
     border: 2px solid red;
     width: fit-content;
-    margin: 5cqi auto;
+    margin: 20cqi auto;
 }
 .admin-title h3{
     text-align: center;
     margin-bottom: 5cqi;
-}
-
-.admin-input{
+    }
+    
+    .admin-input{
     display: flex;
     flex-direction: column;
 
@@ -354,22 +469,121 @@ th{
     width: 20cqi;
     margin: 1cqi;
     align-items: center;
-    padding-left: 15cqi;
-}
-.admin-table table{
-    width: 100%;
+    /* padding-left: 15cqi; */
+    }
+    .admin-table table{
+        width: 100%;
 }
 .admin-table table thead th{
     padding: 0 10px;
-}
-
-@media (max-width: 969px) {
-
-    .desktopNav{
-        display: none;
     }
 
-    .showNav{
+
+    /* Contact Page */
+        .banner2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-image: url(/HostedImages/max-mugRWvFwOnU-unsplash.jpg);
+            width: 100%;
+            height: 20vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .banner3{
+            margin-top: 2cqi;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            text-align: start;
+            background-image: url(/HostedImages/marcel-strauss-Vs2mCnrmozA-unsplash.jpg);
+            width: 100%;
+            height: 20vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .banner4{
+            margin-top: 2cqi;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            text-align: start;
+            background-image: url(/HostedImages/alexandru-goman-2z-CjTFqgr4-unsplash.jpg);
+            width: 100%;
+            height: 20vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner3 h3{
+            text-transform: uppercase;
+            color: white;
+            margin-left: 0;
+            
+        }
+        .banner4 h3{
+            text-transform: uppercase;
+            color: white;
+            margin-left: 0;
+            
+        }
+        .contact-block{
+            text-align: start;
+        }
+
+        .contact-form{
+            border: 2px red solid;
+            margin: 20cqi auto;
+            /* display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 20cqi; */
+            /* background-image: url(/HostedImages/lorenzo-gerosa-nvoxWnuc1QI-unsplash.jpg); */
+        }
+        /* .contact-form form{
+            text-align: center;
+            padding: 2em 2em ;
+        } */
+        form{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-group{
+            margin-bottom: 30px ;
+            position: relative;
+        }
+        input, textarea{
+            width: 100%;
+            padding: 10px;
+            outline: 0;
+            border: 1px solid violet;
+            background: transparent;
+            font-size: 15px;
+        }
+
+        label{
+            height: 100%;
+            position: absolute;
+            left: 0;
+            cursor: text;
+
+        }
+        /* .contact-form input{
+            margin: 0 .5em;
+            padding: .8cqi .5cqi;
+        } */
+    @media (max-width: 969px) {
+        
+    .desktopNav{
+        display: none;
+        }
+        
+        .showNav{
         display: block;
         margin-right: 30px;
         color: black;
@@ -378,48 +592,48 @@ th{
     .shopIcon{
         display: block;
         color: black;
+        }
+        
+        .shopIcon, .contactIcon{
+            display: block;
+            color: red;
     }
-
-    .shopIcon, .contactIcon{
-        display: block;
-        color: red;
-    }
-
+    
     .product-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
-    }
-      .product-grid-1{
+        }
+        .product-grid-1{
         
         margin: 10cqi auto;
         width: 90cqi;
         height: 100cqi;
         overflow: hidden;
-    }  
-
+        }  
+        
      .product{
         width: 100cqi;
         height: 80cqi;
         margin: .5em 0;
         overflow: hidden;
-    } 
+        } 
 
-    .product-image{
+        .product-image{
         width: 90cqi;
         margin: 0em 0;
         
 
-    .mission{
+        .mission{
         margin: 10em auto;
         color: #070600de;
         text-align: center;
         align-items: center;
 
-    }
-}
-}
+        }
+        }
+        }
 
 @media (max-width:476px){
     /* Home page */
@@ -427,8 +641,8 @@ th{
 
     .contactIcon{
         display: none;
-    }
-
+        }
+        
     .phoneNav{
         width: 100%;
     }
